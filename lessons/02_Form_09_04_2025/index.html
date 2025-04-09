@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Signup form</h1>
+    <form action="/regiser">
+      <label for="name">Name: </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Enter your name..."
+        required
+      />
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" readonly />
+      </div>
+
+      <div>
+        <label for="password">Password: </label>
+        <input
+          type="text"
+          name="password"
+          id="password"
+          placeholder="Enter your password..."
+          title="Требование к паролю: заглавная буква, цифра, и минимум 8 символов"
+          pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@#$%^&]).{8,}"
+        />
+      </div>
+
+      <div>
+        <label for="hobby">Hobby: </label>
+        <select name="hobby" id="Hobby">
+          <option value="sport">Basketball</option>
+          <option value="sport">Football</option>
+          <option value="music">Guitar</option>
+          <option value="music">Piano</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="agreement">Agreement: </label>
+        <input type="checkbox" id="agreement" required />
+      </div>
+
+      <div>
+        <label for="male">Male: </label>
+        <input type="radio" id="male" name="gender" required />
+
+        <label for="female">Female: </label>
+        <input type="radio" id="female" name="gender" />
+      </div>
+
+      <!-- div - блочный элемент -->
+      <!-- span - строчный элемент -->
+      <!-- br - break прервать строку -->
+      <!-- hr - horisonzontal row - линия -->
+
+      <br />
+      <br />
+      <div>
+        <button type="reset">Reset</button>
+        <button type="submit">Register</button>
+      </div>
+    </form>
+  </body>
+</html>
