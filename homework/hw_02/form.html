@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Организация детского праздника</title>
+  </head>
+  <body>
+    <h1>Заявка на организацию детского праздника</h1>
+
+    <form action="/send" method="POST">
+
+      <label for="name">Ваше имя:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Введите ваше имя"
+      />
+      <br /><br />
+
+      <label for="email">Электронная почта:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="example@mail.com"
+      />
+      <br /><br />
+
+      <label for="phone">Телефон:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        placeholder="+38 (XXX) XXX-XX-XX"
+        pattern="^\+38\(?\d{3}\)?\s?\d{3}-?\d{2}-?\d{2}$"
+        title="Номер должен быть в формате: +38 (XXX) XXX-XX-XX"
+      />
+
+      <br /><br />
+
+      <label for="password">Пароль (для подтверждения бронирования):</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        placeholder="Введите пароль"
+      />
+      <br /><br />
+
+      <label for="event-date">Дата праздника:</label>
+      <input type="date" id="event-date" name="event_date" required />
+      <br /><br />
+
+      <label for="event-type">Тип мероприятия:</label>
+      <select id="event-type" name="event_type" required>
+        <option value="" disabled selected>Выберите тип мероприятия</option>
+        <option value="birthday">День рождения</option>
+        <option value="party">Тематическая вечеринка</option>
+        <option value="other">Другое</option>
+      </select>
+      <br /><br />
+
+      <label for="activities">Предпочтительные активности:</label><br />
+      <input type="checkbox" id="clown" name="activities" value="clown" />
+      <label for="clown">Клоун</label><br />
+
+      <input
+        type="checkbox"
+        id="face-painting"
+        name="activities"
+        value="face-painting"
+      />
+      <label for="face-painting">Роспись лиц</label><br />
+
+      <input type="checkbox" id="games" name="activities" value="games" />
+      <label for="games">Игры и конкурсы</label><br /><br />
+
+      <label for="comments">Комментарии или пожелания:</label>
+      <textarea
+        id="comments"
+        name="comments"
+        rows="4"
+        cols="50"
+        placeholder="Введите ваши пожелания"
+      ></textarea>
+      <br /><br />
+
+      <button type="submit">Отправить заявку</button>
+      <button type="reset">Сбросить</button>
+    </form>
+  </body>
+</html>
