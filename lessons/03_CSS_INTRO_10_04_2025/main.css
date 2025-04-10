@@ -1,0 +1,51 @@
+body {
+    /* rgb - red green blue */
+    background: color #f5f5f5;
+}
+form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    margin: 0 auto;
+    line-height: 1.5;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+
+}
+
+form>div{
+    margin-bottom: 1rem;
+}
+form>div:last-of-type {
+    margin-top: 2rem;
+}
+#name,
+#email,
+#password,
+#phone {
+    width: 100%;
+    padding: 5px 0 5px 5px;
+    border-radius: 5px;
+    border: #ccc;
+}
+
+.btn {
+    width: fit-content;
+    margin: 20px auto 30px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+button[type="reset"] {
+    background-color: red;
+}
+
+button[type="submit"] {
+    background-color: green;
+}
