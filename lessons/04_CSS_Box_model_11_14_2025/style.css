@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Special+Gothic+Condensed+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:"Covered By Your Grace", cursive;
+    font-weight: 400; /*100 - 900 */
+    font-style:normal
+}
+
+header {
+    background-image: url('./images/Coffee.jpg');
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+}
