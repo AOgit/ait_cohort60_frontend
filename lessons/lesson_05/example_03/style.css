@@ -1,0 +1,78 @@
+.section {
+  height: 50vh;
+}
+
+.red {
+  background-color: lightcoral;
+}
+
+.blue {
+  background-color: lightblue;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.card {
+  background-color: white;
+  width: 300px;
+  height: 200px;
+  border-radius: 18px;
+  margin-bottom: 20px; 
+  margin-left: 20px;
+  position: sticky;
+  top: 25vh;
+}
+
+.two {
+  left: calc(100vw/3 - )
+}
+
+.three {
+  left: 67vw;
+  margin-bottom: 0;
+}
+
+.innern {
+  padding-bottom: 20px;
+} 
+
+.block {
+    padding-top: 50px;
+}
+
+
+.absolute-block {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  width: 300px;
+  height: 180px;
+  background-color: grey;
+}
+
+.wrapper {
+  position: relative;
+}
+
+/* position: absolute — это способ вытащить элемент из обычного потока документа и разместить его точно там, где ты укажешь, относительно ближайшего позиционированного родителя (того, у кого есть position: relative, absolute, fixed или sticky).*/
+.red-block {
+  position: absolute;
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  right: 30px;
+}
+
+.block-background-img {
+    width: 600px;
+    height: 600px;
+    background-color: black;
+    background: url('./pictures/cat.jpg') no-repeat left/contain;
+    border: solid 2px red;
+}

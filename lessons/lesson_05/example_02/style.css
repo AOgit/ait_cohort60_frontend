@@ -1,0 +1,72 @@
+body {
+    height: 3000px;
+    margin: 0;
+}
+
+header {
+    height: 170px;
+    width: 100%;
+    position: relative;
+}
+
+/* fixed - выпадает из нормального потока */
+/* относительно окна браузера (вьюпорта) */
+/* Его положение задаётся с помощью top, right, bottom, left
+ — и эти значения считаются относительно окна, а не родителя. */
+.navigation {
+    height: calc(170px - 48px);
+    width: 100%;
+    background-color: lightgrey;
+    padding: 24px;
+    position: fixed;
+    top: 0;
+}
+
+.card {
+    height: 300px;
+    width: 200px;
+    border-radius: 18px;
+    padding: 10px;
+    margin: 20px;
+    position: static; 
+    /* by default position is static */
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: lightcoral;
+}
+
+.green {
+    background-color: lightgreen;
+}
+
+/* position relative */
+.relative-block {
+    position: relative;
+    left: 40px;
+    top: 50px;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: lightsalmon;
+    height: 60px;
+    width: 60px;
+    /* bottom: -100px; */
+    z-index: 1;
+    /* если указано оба top bottom то приоритет у top; */
+    /* если указано оба left right то приоритет у left: ; */
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+}
+
+.sticky-card {
+    position: sticky;
+    top: 50px;
+}
