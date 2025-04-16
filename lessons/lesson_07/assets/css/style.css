@@ -1,0 +1,128 @@
+@font-face{font-family:Neue Haas Unica;
+    font-weight:400;
+    font-style:normal;
+    src:url(../fonts/neuehaasunica_n4.woff2) format("woff2")
+}
+
+body {
+    font-family: Neue Haas Unica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: none;
+    color: #1b342d;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+}
+.green {
+    color: #4F722D;
+}
+
+main {
+    text-align: center;
+}
+
+main h1 {
+    margin: 60px auto;
+}
+
+.wrapper {
+    display: flex;
+    gap: 60px 20px;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card {
+    width: calc(25% - 20px);
+    background-color: #f4f3eb;
+    font-size: 12px;
+    position: relative;
+    min-width: 245px;
+}
+
+.top {
+    position: relative;
+}
+
+.card img:first-of-type {
+    width: 100%;
+    position: relative;
+    top: -22px;
+}
+
+.card img.badge {
+    position: absolute;
+    bottom: calc(8% + 22px);
+    right: 11%;
+    width: 30%;
+}
+
+.bottom {
+    padding: 0 24px 70px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    font-size: 14px;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.card .bottom .price {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.card .bottom .price span {
+    font-size:8px;
+    font-weight:normal; 
+    color:gray; 
+    display:block; 
+    margin-top:-5px; 
+    text-align: left;
+}
+.card .bottom .price div:last-child {
+    font-size: 12px;
+}
+
+.card p {
+    margin: 0;
+}
+
+.card .btn {
+    display: flex;
+    justify-content: center; /* по горизонтали */
+    align-items: center;     /* по вертикали */
+    height: 40px;
+    line-height: 1.2;
+    background: #4f772d;
+    border: thin solid #4f772d;
+    border-radius: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .5s ease;
+    font-size: 14px;
+}
+
+.card .btn {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    right: 30px;
+}
+
+
+.card .btn:hover {
+    background: #cdb96b;
+    border-color: #cdb96b;
+    color: black;
+}
+
+.card a, .card a:visited {
+    color: white; 
+    text-decoration: none;
+}
+

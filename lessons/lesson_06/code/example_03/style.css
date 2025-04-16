@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    height: 300vh;
+    background-color: lightcyan;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.item {
+    background-color: lightpink;
+    height: 400px;
+    width: 350px;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small {
+    height: 200px;
+}
