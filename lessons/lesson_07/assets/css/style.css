@@ -50,17 +50,18 @@ main h1 {
 .card img:first-of-type {
     width: 100%;
     position: relative;
-    top: -22px;
+    top: -30px;
 }
 
 .card img.badge {
     position: absolute;
-    bottom: calc(8% + 22px);
+    bottom: calc(11% + 22px);
     right: 11%;
     width: 30%;
 }
 
 .bottom {
+    margin-top: -20px;
     padding: 0 24px 70px;
     display: flex;
     flex-flow: column nowrap;
