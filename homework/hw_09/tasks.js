@@ -2,19 +2,19 @@
 let temperature = 25;
 if (temperature < 0) {
     console.log("Холодно!"); 
-} else if (temperature < 21) {
+} else if (temperature < 21) {   // <= 20
     console.log("Прохладно");
-} else if (temperature < 31) {
+} else if (temperature < 31) {  // <= 31
     console.log("Тепло");
 } else {
     console.log("Жарко");
 }
 
 // Task 2
-console.log(wetherCodeDescription('ds'));
+console.log(weatherCodeDescription('ds'));
 
-function wetherCodeDescription(wetherCode = '') {
-    switch (wetherCode.toUpperCase()) {
+function weatherCodeDescription(weatherCode = '') {
+    switch (weatherCode.toUpperCase()) {
         case "SQ":
             return "шквал";
         case "PO":
