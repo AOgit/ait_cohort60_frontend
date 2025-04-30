@@ -14,7 +14,7 @@ console.log(swapFirstAndLast(array));
 
 // Task 2
 function firstCapitalLetter(array) {
-    if (typeof(array[0]) === "string")
+    if (array.length && array[0].length && typeof(array[0]) === "string")
         array[0] = array[0][0].toUpperCase().concat(array[0].slice(1));
 }
 firstCapitalLetter(array);
