@@ -13,7 +13,10 @@ const house = {
   const array = ["un", "body", "thing", "way"];
   function addPrefix(array, prefix) {
         let newArray = [];
-        for(let item of array) newArray.push(prefix.concat(item))
+        for(let item of array) 
+        {
+          newArray.push(prefix.concat(item));
+        }
         return newArray;
   }
   console.log(addPrefix(array, "no")); // [ 'noun', 'nobody', 'nothing', 'noway' ]
