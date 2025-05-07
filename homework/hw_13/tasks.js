@@ -39,3 +39,9 @@ const dieselGateCars = cars.map((auto) =>
     : auto
 );
 console.log("\nConsequences of Dieselgate:\n", dieselGateCars);
+
+const tesla = { brand: "Tesla", price: 25000, isDiesel: false };
+// Внимание создаем новые объекты, a не копируем переменную с ссылкой на объект
+const modernCars = cars.map((car) => (car.isDiesel ? {... tesla} : car));
+// const modernCars = cars.map((car) => (car.isDiesel ? $tesla : car)); // так не правильно!!! будет вставляться один и тот же объект
+console.log("modernCars: ", modernCars);
