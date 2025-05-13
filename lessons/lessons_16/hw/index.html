@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <title>HW15</title>
+  </head>
+  <body
+    x-data="{animals:[], form: { nickname: '', age: '', breed: '' } }"
+    x-init="animals = [ { nickname: 'Garfield', age: 3, breed: 'Persian' }, { nickname: 'Tom', age: 2, breed: 'British' }]"
+  >
+    <form id="add-animal-form" @submit.prevent="addAnimal">
+      <label for="nickname-input">Nickname</label>
+      <input type="text" name="nickname" x-model="form.nickname" />
+
+      <label>
+        Age
+        <input type="text" name="age" x-model="form.age" />
+      </label>
+
+      <label>Breed</label>
+      <input type="text" name="breed" x-model="form.breed" />
+
+      <button type="submit">Add Animal</button>
+    </form>
+
+    <ul id="animals-list">
+      <template x-for="(animal, index) in animals" :key="index">
+        <li
+          x-text="`Nickname: ${animal.nickname}, Age: ${animal.age}, Breed: ${animal.breed}`"
+        ></li>
+      </template>
+    </ul>
+
+    <script>
+      function addAnimal() {
+        this.animals.push({
+          nickname: this.form.nickname,
+          age: this.form.age,
+          breed: this.form.breed,
+        });
+
+        this.form.nickname = "";
+        this.form.age = "";
+        this.form.breed = "";
+      }
+    </script>
+  </body>
+</html>
