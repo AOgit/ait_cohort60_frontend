@@ -1,0 +1,17 @@
+[
+  {
+    "name": "john",
+    "age": 18,
+    "isStudent": true,
+    "address": {
+      "PLZ": 101,
+      "str": "Humburger str",
+      "house": 12
+    },
+    "kids": [
+        "Ivan",
+        "Fred"
+    ]
+
+  }
+]
