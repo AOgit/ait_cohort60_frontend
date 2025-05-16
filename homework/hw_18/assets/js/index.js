@@ -17,5 +17,6 @@ fetch("https://aogit.github.io/ait_cohort60_frontend/homework/hw_18/assets/data/
     yearEl.innerText = `Год: ${year}`;
 })
 .catch((err) => {
+    // wrapper.innerHTML = `<i>${err.message}</i>`;
     console.log(err.message);
 })
