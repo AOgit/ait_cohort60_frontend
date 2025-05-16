@@ -1,6 +1,7 @@
 const wrapper = document.querySelector(".wrapper");
 const errEl = document.getElementById("error-msg");
 const form = document.getElementById("price-form");
+const quantEl = document.getElementById("quantity");
 
 // async вернет Promise
 const getProducts = async () => {
@@ -19,46 +20,49 @@ const getProducts = async () => {
   }
 };
 
-
-const render = async ({minPrice = 0, maxPrice = Infinity}) => {
+const render = async ({ minPrice = 0, maxPrice = Infinity }) => {
   // очищаем родителя
   wrapper.innerHTML = "";
   // получаем продукты (getProducts() возвращает Promise, поэтому через await)
   const products = await getProducts();
-  products
+  const filteredProducts = products
     // фильтруем
     .filter((product) => product.price >= minPrice && product.price <= maxPrice)
     // сортируем по возрастанию
-    .sort((a,b) => a.price - b.price) 
-    .forEach(({ title, price, description, images }) => {
-      const cardEl = document.createElement("ul");
-      const itemEl = document.createElement("li");
-      const titleItemEl = itemEl.cloneNode();
-      const priceItemEl = itemEl.cloneNode();
-      const descItemEl = itemEl.cloneNode();
-      const imgItemEl = itemEl.cloneNode();
-      const imgEl = document.createElement("img");
-      imgItemEl.appendChild(imgEl);
+    .sort((a, b) => a.price - b.price);
+    quantEl.innerHTML = `(<b>${filteredProducts.length}</b> шт)`;
 
-      titleItemEl.innerHTML = `<i>Title:</i> ${title}`;
-      priceItemEl.innerHTML = `<i>Price:</i> ${price}`;
-      descItemEl.innerHTML = description.length > 100 ? `${description.slice(0, 100)}...` : description;
+  filteredProducts.forEach(({ title, price, description, images }) => {
+    const cardEl = document.createElement("ul");
+    const itemEl = document.createElement("li");
+    const titleItemEl = itemEl.cloneNode();
+    const priceItemEl = itemEl.cloneNode();
+    const descItemEl = itemEl.cloneNode();
+    const imgItemEl = itemEl.cloneNode();
+    const imgEl = document.createElement("img");
+    imgItemEl.appendChild(imgEl);
 
-      // взял рандомную фотку, так как в объекте нерабочий адрес
-      const rndId = Math.floor(Math.random() * 101) + 100;
-      imgEl.src = `https://picsum.photos/id/${rndId}/250`;
-      imgEl.alt = title;
-      imgEl.loading="lazy";
+    titleItemEl.innerHTML = `<i>Title:</i> ${title}`;
+    priceItemEl.innerHTML = `<i>Price:</i> ${price}`;
+    descItemEl.innerHTML =
+      description.length > 100
+        ? `${description.slice(0, 100)}...`
+        : description;
 
-      cardEl.append(imgItemEl, titleItemEl, priceItemEl, descItemEl);
-      wrapper.appendChild(cardEl);
-    });
+    // взял рандомную фотку, так как в объекте нерабочий адрес
+    const rndId = Math.floor(Math.random() * 101) + 100;
+    imgEl.src = `https://picsum.photos/id/${rndId}/250`;
+    imgEl.alt = title;
+    imgEl.loading = "lazy";
+
+    cardEl.append(imgItemEl, titleItemEl, priceItemEl, descItemEl);
+    wrapper.appendChild(cardEl);
+  });
 };
 
 form.addEventListener("change", (e) => {
   const el = e.target;
   if (el.name === "price") {
-    
     switch (el.value) {
       case "1":
         render({ minPrice: 0, maxPrice: 50 });
@@ -67,7 +71,7 @@ form.addEventListener("change", (e) => {
         render({ minPrice: 51, maxPrice: 100 });
         break;
       case "3":
-        render({ minPrice: 101});
+        render({ minPrice: 101 });
         break;
       default:
         render({});

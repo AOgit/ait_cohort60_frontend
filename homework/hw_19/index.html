@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./assets/js/index.js" defer></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>List of products</title>
-</head>
-<body>
-    <div id="error-msg"></div> 
+  </head>
+  <body>
+    <div id="error-msg"></div>
     <div class="price-toggler">
+      <div>
         <h3>Стоимость товаров</h3>
-        <form id="price-form">
-            <input type="radio" name="price" value="0" id="all">
-            <label for="all">Все товары</label>
-            <input type="radio" name="price" value="1" id="0_50">
-            <label for="0_50">0-50</label>
-            <input type="radio" name="price" value="2" id="51_100">
-            <label for="51_100">51-100</label>
-            <input type="radio" name="price" value="3" id="101_">
-            <label for="101_">больше 100</label>
-        </form>
+        <span id="quantity"></span>
+      </div>
+      <form id="price-form">
+        <label><input type="radio" name="price" value="0" /> Все товары</label>
+        <label><input type="radio" name="price" value="1" /> 0-50 </label>
+        <label><input type="radio" name="price" value="2" /> 51-100 </label>
+        <label><input type="radio" name="price" value="3" /> больше 100</label>
+      </form>
     </div>
-   <div class="wrapper">
-
-   </div> 
-</body>
+    <div class="wrapper"></div>
+  </body>
 </html>
